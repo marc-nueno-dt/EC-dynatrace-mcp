@@ -1,0 +1,8 @@
+# Dynatrace Managed Environments Configuration
+# This file demonstrates YAML format with comments and environment variable interpolation
+
+# Development environment
+- alias: digit-dev
+  apiEndpointUrl: https://intragate.development.ec.europa.eu/apmgw
+  environmentId: 87889eb4-bb35-41ec-a521-adf5abcc6256
+  dynatraceUrl: https://dynatrace.development.tech.ec.europa.eu

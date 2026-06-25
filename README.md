@@ -86,10 +86,13 @@ Place the following in kiro configuration, we will work at the workspace level.
   "mcpServers": {
     "dynatrace-managed-mcp": {
       "command": "npx",
-      "args": ["-y", "@dynatrace-oss/dynatrace-managed-mcp-server@latest"],
+      "args": [
+        "-y",
+        "@dynatrace-oss/dynatrace-managed-mcp-server@latest"
+      ],
       "env": {
         "DT_CONFIG_FILE": "./dt-config.yaml",
-        "DT_TOKEN": "dt0c01.ABC123..."
+        "DT_TOKEN": "dt0c01.ABC123...",
         "LOG_LEVEL": "info"
       }
     }
