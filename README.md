@@ -109,3 +109,38 @@ Notes:
 - Keep `DT_TOKEN` out of source control.
 - If you configure multiple environments, add more JSON objects inside `DT_ENVIRONMENT_CONFIGS`.
 - `DT_ENVIRONMENT_CONFIGS` takes precedence for this setup, so `DT_CONFIG_FILE` is not required in this Kiro configuration style.
+
+## Task 4: Connect to the Remote HTTP Server
+
+For the remote HTTP server, use the standard HTTP transport shape in Kiro.
+
+Use this workspace-level MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "my-remote-server": {
+      "url": "https://intragate.development.ec.europa.eu/dynatrace-mcp",
+      "headers": {
+        "X-Dynatrace-Tokens": "digit-dev=dt0c01.AAA"
+      }
+    }
+  }
+}
+```
+
+Use `dt-config-remote.yaml` on the remote side to define the Dynatrace environment details the server should expose:
+
+- `alias: digit-dev`
+- `dynatraceUrl: https://dynatrace.development.tech.ec.europa.eu`
+- `apiEndpointUrl: https://intragate.development.ec.europa.eu/apmgw`
+- `environmentId: 87889eb4-bb35-41ec-a521-adf5abcc6256`
+
+If you need additional remote environments, add them to [dt-config-remote.yaml](dt-config-remote.yaml).
+
+
+# Additional Topics
+
+Useful Prompt Examples: https://github.com/dynatrace-oss/dynatrace-managed-mcp/tree/main/examples 
+
+Expand DT MCP for EC Usecases
