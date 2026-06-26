@@ -80,21 +80,28 @@ Suggested checklist:
 
 ## Task 3: Install Dynatrace MCP Server Locally
 
-Place the following in kiro configuration, we will work at the workspace level.
+For Kiro workspace-level MCP settings, use this format with `DT_ENVIRONMENT_CONFIGS`.
 
+The example below is aligned with values in `dt-config.yaml`.
+
+```json
 {
   "mcpServers": {
     "dynatrace-managed-mcp": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@dynatrace-oss/dynatrace-managed-mcp-server@latest"
-      ],
+      "args": ["-y", "@dynatrace-oss/dynatrace-managed-mcp-server@latest"],
       "env": {
-        "DT_CONFIG_FILE": "./dt-config.yaml",
-        "DT_TOKEN": "dt0c01.ABC123...",
-        "LOG_LEVEL": "info"
+        "DT_ENVIRONMENT_CONFIGS": "[{\"dynatraceUrl\":\"https://dynatrace.development.tech.ec.europa.eu\",\"apiEndpointUrl\":\"https://intragate.development.ec.europa.eu/apmgw\",\"environmentId\":\"87889eb4-bb35-41ec-a521-adf5abcc6256\",\"alias\":\"digit-dev\",\"apiToken\":\"${DT_TOKEN}\"}]",
+        "DT_TOKEN": "dt0c01.REPLACE_WITH_YOUR_TOKEN",
+        "LOG_LEVEL": "DEBUG"
       }
     }
   }
 }
+```
+
+Notes:
+
+- Keep `DT_TOKEN` out of source control.
+- If you configure multiple environments, add more JSON objects inside `DT_ENVIRONMENT_CONFIGS`.
+- `DT_ENVIRONMENT_CONFIGS` takes precedence for this setup, so `DT_CONFIG_FILE` is not required in this Kiro configuration style.
