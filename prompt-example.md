@@ -8,6 +8,10 @@ Gather:
 
 Then produce a 1-page security report for the service owner with the following structure:
 
+Write the final report to a Markdown file named `security-assessment-report.md`.
+Use Markdown headings, a table for vulnerabilities, and bullet or numbered lists where appropriate.
+Keep the file concise, well-formatted, and ready to share with the service owner.
+
 ## Security Assessment Report — idt013933.cc.cec.eu.int
 **Date:** [today's date]
 **Environment:** digit-dev
