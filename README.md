@@ -112,7 +112,10 @@ Notes:
 
 ## Task 4: Connect to the Remote HTTP Server
 
-For the remote HTTP server, use the standard HTTP transport shape in Kiro.
+- Use the standard HTTP transport shape in Kiro.
+- Point the client at the remote MCP endpoint URL.
+- Pass the `X-Dynatrace-Tokens` header for the target environment.
+- Keep the remote environment definitions in [dt-config-remote.yaml](dt-config-remote.yaml).
 
 Use this workspace-level MCP configuration:
 
@@ -138,6 +141,9 @@ Use `dt-config-remote.yaml` on the remote side to define the Dynatrace environme
 
 If you need additional remote environments, add them to [dt-config-remote.yaml](dt-config-remote.yaml).
 
+# Task 5: Security Investigation
+
+# Task 6: Errors investigation
 
 # Additional Topics
 
