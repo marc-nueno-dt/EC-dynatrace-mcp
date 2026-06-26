@@ -119,7 +119,7 @@ Use this workspace-level MCP configuration:
 ```json
 {
   "mcpServers": {
-    "my-remote-server": {
+    "dynatrace-managed-mcp-remote": {
       "url": "https://intragate.development.ec.europa.eu/dynatrace-mcp",
       "headers": {
         "X-Dynatrace-Tokens": "digit-dev=dt0c01.AAA"
